@@ -9,7 +9,8 @@
   "scripts": {
     "lint": "npx eslint .",
     "lint:fix": "npx eslint . --fix",
-    "format": "prettier --write 'src/**/*.{js,ts,tsx,json,css,md}'",
+    "format": "prettier 'src/**/*.{js,ts,tsx,json,css,md}'",
+    "format:fix": "prettier --write 'src/**/*.{js,ts,tsx,json,css,md}'",
     "prepare": "husky install"
   },
   "lint-staged": {
