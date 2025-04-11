@@ -2,13 +2,15 @@ import eslintPluginReact from 'eslint-plugin-react';
 import eslintPluginReactHooks from 'eslint-plugin-react-hooks';
 import parser from '@typescript-eslint/parser';
 import eslintPluginTS from '@typescript-eslint/eslint-plugin';
+import eslintPluginPrettier from 'eslint-plugin-prettier';
+import configPrettier from 'eslint-config-prettier';
 
 export default [
   {
     ignores: ['node_modules/**', 'dist/**', 'build/**']
   },
   {
-    files: ['**/*.ts', '**/*.tsx'],
+    files: ['src/**/*.{ts,tsx}'],
     languageOptions: {
       parser: parser,
       parserOptions: {
@@ -25,7 +27,18 @@ export default [
     plugins: {
       '@typescript-eslint': eslintPluginTS,
       react: eslintPluginReact,
-      'react-hooks': eslintPluginReactHooks
+      'react-hooks': eslintPluginReactHooks,
+      prettier: eslintPluginPrettier,
+    },
+    settings: {
+      react: {
+        version: 'detect'
+      },
+      'import/resolver': {
+        typescript: {
+          project: './tsconfig.json',
+        },
+      },
     },
     rules: {
       // TypeScript
@@ -34,12 +47,12 @@ export default [
       // React
       'react/react-in-jsx-scope': 'off',
       'react-hooks/rules-of-hooks': 'error',
-      'react-hooks/exhaustive-deps': 'warn'
-    },
-    settings: {
-      react: {
-        version: 'detect'
-      }
+      'react-hooks/exhaustive-deps': 'warn',
+
+      // Prettier
+      'prettier/prettier': 'error',
     }
-  }
+  },
+  // Apply Prettier config to disable conflicting ESLint rules
+  configPrettier
 ];
