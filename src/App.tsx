@@ -1,7 +1,12 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
 
-const App = () => <h1>Hello Vite + TS!</h1>;
+const App: React.FC = () => {
+  return (
+    <div>
+      <h1>Hello, React + TypeScript + Webpack! 👋</h1>
+      <p>Проект успешно настроен 🎉</p>
+    </div>
+  );
+};
 
-const root = ReactDOM.createRoot(document.getElementById('root')!);
-root.render(<App />);
+export default App;
