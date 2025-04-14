@@ -4,10 +4,17 @@ import parser from '@typescript-eslint/parser';
 import eslintPluginTS from '@typescript-eslint/eslint-plugin';
 import eslintPluginPrettier from 'eslint-plugin-prettier';
 import configPrettier from 'eslint-config-prettier';
+import eslintPluginNext from '@next/eslint-plugin-next';
 
 export default [
   {
-    ignores: ['node_modules/**', 'dist/**', 'build/**']
+    ignores: [
+      'node_modules/**',
+      'dist/**',
+      'build/**',
+      '.next/**',
+      '.husky/**',
+    ],
   },
   {
     files: ['src/**/*.{ts,tsx}'],
@@ -17,22 +24,23 @@ export default [
         ecmaVersion: 'latest',
         sourceType: 'module',
         ecmaFeatures: {
-          jsx: true
-        }
+          jsx: true,
+        },
       },
       globals: {
-        React: 'readonly'
-      }
+        React: 'readonly',
+      },
     },
     plugins: {
       '@typescript-eslint': eslintPluginTS,
       react: eslintPluginReact,
       'react-hooks': eslintPluginReactHooks,
       prettier: eslintPluginPrettier,
+      next: eslintPluginNext,
     },
     settings: {
       react: {
-        version: 'detect'
+        version: 'detect',
       },
       'import/resolver': {
         typescript: {
@@ -51,8 +59,8 @@ export default [
 
       // Prettier
       'prettier/prettier': 'error',
-    }
+    },
   },
   // Apply Prettier config to disable conflicting ESLint rules
-  configPrettier
+  configPrettier,
 ];
