@@ -14,6 +14,8 @@ export default [
       'build/**',
       '.next/**',
       '.husky/**',
+      '.cache/**',
+      'public/**',
     ],
   },
   {

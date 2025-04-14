@@ -7,6 +7,9 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
+    "dev:remix": "remix dev",
+    "build:remix": "remix build",
+    "start:remix": "remix-serve build",
     "dev:next": "next dev",
     "build:next": "next build",
     "start:next": "next start",
@@ -33,6 +36,8 @@
     "@babel/preset-env": "^7.26.9",
     "@babel/preset-react": "^7.26.3",
     "@babel/preset-typescript": "^7.27.0",
+    "@next/eslint-plugin-next": "^15.3.0",
+    "@remix-run/dev": "^2.16.5",
     "@types/node": "^22.14.1",
     "@types/react": "^19.1.1",
     "@types/react-dom": "^19.1.2",
@@ -63,9 +68,12 @@
     "webpack-dev-server": "^5.2.1"
   },
   "dependencies": {
-    "@next/eslint-plugin-next": "^15.3.0",
+    "@remix-run/node": "^2.16.5",
+    "@remix-run/react": "^2.16.5",
+    "@remix-run/serve": "^2.16.5",
+    "isbot": "^4",
     "next": "^15.3.0",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
   }
 }

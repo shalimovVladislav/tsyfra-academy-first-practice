@@ -4,3 +4,6 @@ dist
 .husky/_/*
 !/.husky/_/husky.sh
 .env
+build
+.cache
+public

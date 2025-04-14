@@ -17,12 +17,10 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",     
     "incremental": false,
   },
-  "include": [
-    "src"
-  ],
+  "include": ["remix.env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": [
     "node_modules"
   ]
